@@ -21,7 +21,6 @@ const Home = () => {
     }
 
     const handleSubmit = (event) =>{
-        console.log(searchBarValue);
         event.preventDefault();
         getCurrentWeatherFromAPI(searchBarValue).then((result)=>{
             setCurrentWeather(result);

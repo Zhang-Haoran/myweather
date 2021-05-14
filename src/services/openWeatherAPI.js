@@ -1,7 +1,8 @@
 import axios from "axios";
+const APIKey = require("./config.json").APIKey;
 
 export async function getCurrentWeatherFromAPI(searchValue){
-    const currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&APPID=2e9fc10d5be83f64466b524a0669c79d&units=metric`;
+    const currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&APPID=${APIKey}&units=metric`;
     return new Promise((resolve, reject)=>{
         axios.get(currentWeatherURL).then((result)=>{
             const data = result.data;
