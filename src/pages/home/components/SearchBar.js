@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {SearchOutlined} from "@ant-design/icons";
 
-const SearchSection = styled.div`
+const SearchSection = styled.form`
   background: white;
   position: relative;
   top: 5rem;
@@ -31,9 +31,9 @@ const SearchIcon = styled.span`
 `;
 
 // 参数从父组件传入
-const SearchBar = ({value,onChange}) => {
+const SearchBar = ({value,onChange,submit}) => {
     return (
-        <SearchSection>
+        <SearchSection onSubmit={submit}>
             <SearchIcon>
                 <SearchOutlined/>
             </SearchIcon>
