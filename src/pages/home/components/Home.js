@@ -4,6 +4,7 @@ import styled from "styled-components";
 import img from '../../../assets/images/home.jpg';
 import {useState} from "react";
 
+//Home 页面的各组件 组合
 const HomeBackground = styled.div`
   background: url(${props => props.img});
   background-size: cover;
@@ -11,13 +12,15 @@ const HomeBackground = styled.div`
 `;
 const Home = () => {
     const [searchBarValue, setSearchBarValue] = useState("");
+    //当输入框发生变化时
     const handleSearchBarChange = (event) => {
+        //改变用户框的state
         setSearchBarValue(event.target.value)
     }
-    console.log(searchBarValue)
     return(
         <HomeBackground img={img}>
-            <SearchBar value = {searchBarValue} onChange = {(event) => handleSearchBarChange(event)}/>
+            {/*把onchange作为props传给子组件*/}
+            <SearchBar value = {searchBarValue} onChange = {handleSearchBarChange}/>
             <CurrentWeather/>
         </HomeBackground>
     )

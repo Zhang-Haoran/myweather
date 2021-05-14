@@ -30,12 +30,14 @@ const SearchIcon = styled.span`
   font-size: 1.5rem;
 `;
 
+// 参数从父组件传入
 const SearchBar = ({value,onChange}) => {
     return (
         <SearchSection>
             <SearchIcon>
                 <SearchOutlined/>
             </SearchIcon>
+            {/*输入框onChange被设置为传入的参数，value也被作为参数传回*/}
             <SearchInput type="text" placeholder="Enter your city" value={value} onChange={onChange}/>
         </SearchSection>
     )
