@@ -13,13 +13,13 @@ const HomeBackground = styled.div`
 `;
 const Home = () => {
     const [searchBarValue, setSearchBarValue] = useState("");
-    const [currentWeather,setCurrentWeather] = useState({});
+    const [currentWeather,setCurrentWeather] = useState(undefined);
     //当输入框发生变化时
     const handleSearchBarChange = (event) => {
         //改变用户框的state
         setSearchBarValue(event.target.value)
     }
-
+    //提交搜索表单
     const handleSubmit = (event) =>{
         event.preventDefault();
         getCurrentWeatherFromAPI(searchBarValue).then((result)=>{
@@ -27,6 +27,16 @@ const Home = () => {
         })
     }
 
+    //条件渲染
+    if (currentWeather !== undefined){
+        return(
+            <HomeBackground img={img}>
+                {/*把onchange作为props传给子组件*/}
+                <SearchBar value = {searchBarValue} onChange = {handleSearchBarChange} submit = {handleSubmit}/>
+                <CurrentWeather currentWeather = {currentWeather}/>
+            </HomeBackground>
+        )
+    }
     return(
         <HomeBackground img={img}>
             {/*把onchange作为props传给子组件*/}
