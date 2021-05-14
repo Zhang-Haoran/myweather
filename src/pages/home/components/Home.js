@@ -21,7 +21,7 @@ const Home = () => {
     }
     //提交搜索表单
     const handleSubmit = (event) =>{
-        event.preventDefault();
+        event.preventDefault();//阻止页面跳转
         getCurrentWeatherFromAPI(searchBarValue).then((result)=>{
             setCurrentWeather(result);
         })
