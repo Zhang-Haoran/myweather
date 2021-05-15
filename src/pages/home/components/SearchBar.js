@@ -14,10 +14,10 @@ const SearchSection = styled.form`
 const SearchInput = styled.input`
   width: 90%;
   position: absolute;
-  top: 0.5rem;
+  top: 1rem;
   left: 8%;
   border: none;
-  height: 2rem;
+  height: 1rem;
   border-radius: 20px;
 `;
 //搜索图标样式

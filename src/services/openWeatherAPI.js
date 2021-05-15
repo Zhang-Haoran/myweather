@@ -7,7 +7,8 @@ export async function getCurrentWeatherFromAPI(searchValue){
     return new Promise((resolve)=>{
         axios.get(currentWeatherURL).then((result)=>{
             const data = result.data;
-            const date = new Date().toISOString().toString().split("T")[0];
+            const dateString = new Date().toString();
+            const date = `${dateString.split(" ")[0]} ${dateString.split(" ")[1]} ${dateString.split(" ")[2]} ${dateString.split(" ")[3]}`
             const currentWeather = {
                 city: data.name,
                 weatherDescription: data.weather[0].description,
