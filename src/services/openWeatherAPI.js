@@ -26,9 +26,22 @@ export async function getCurrentWeatherFromAPI(searchValue){
 }
 
 export async function getForecastWeatherFromAPI(searchValue){
-    const forecastWeatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&APPID=2e9fc10d5be83f64466b524a0669c79d&units=metric`;
-    axios.get(forecastWeatherURL).then((result)=>{
-        return result;
-    })
+    const forecastWeatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&APPID=${APIKey}&units=metric`;
+    return new Promise(((resolve) => {
+        axios.get(forecastWeatherURL).then((result)=>{
+            const forecastWeatherArray = [];
+            for (let each of result.data.list){
+                const forecastWeatherObject = {
+                    date:each.dt_txt.split(" ")[0],
+                    time:each.dt_txt.split(" ")[1],
+                    temperature: each.main.temp,
+                    weather: each.weather[0].main,
+                    weatherDescription: each.weather[0].description
+                };
+                forecastWeatherArray.push(forecastWeatherObject);
+            }
+            resolve(forecastWeatherArray);
+        })
+    }))
 }
 

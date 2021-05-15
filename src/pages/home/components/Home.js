@@ -3,7 +3,8 @@ import CurrentWeather from "./CurrentWeather";
 import styled from "styled-components";
 import img from '../../../assets/images/home.jpg';
 import {useState} from "react";
-import {getCurrentWeatherFromAPI} from "../../../services/openWeatherAPI";
+import {getCurrentWeatherFromAPI, getForecastWeatherFromAPI} from "../../../services/openWeatherAPI";
+import ForecastWeather from "./ForecastWeather";
 
 //Home 页面的各组件 组合
 const HomeBackground = styled.div`
@@ -17,6 +18,7 @@ const HomeBackground = styled.div`
 const Home = () => {
     const [searchBarValue, setSearchBarValue] = useState("");
     const [currentWeather,setCurrentWeather] = useState(undefined);
+    const [forecastWeather, setForecastWeather] = useState(undefined);
     //当输入框发生变化时
     const handleSearchBarChange = (event) => {
         //改变用户框的state
@@ -27,16 +29,20 @@ const Home = () => {
         event.preventDefault();//阻止页面跳转
         getCurrentWeatherFromAPI(searchBarValue).then((result)=>{
             setCurrentWeather(result);
+        });
+        getForecastWeatherFromAPI(searchBarValue).then((result)=>{
+            setForecastWeather(result);
         })
     }
 
     //条件渲染
-    if (currentWeather !== undefined){
+    if (currentWeather !== undefined && forecastWeather !== undefined){
         return(
             <HomeBackground img={img}>
                 {/*把onchange作为props传给子组件*/}
                 <SearchBar value = {searchBarValue} onChange = {handleSearchBarChange} submit = {handleSubmit}/>
                 <CurrentWeather currentWeather = {currentWeather}/>
+                <ForecastWeather forecastWeather={forecastWeather}/>
             </HomeBackground>
         )
     }
