@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ReactAnimatedWeather from 'react-animated-weather';
+import {findWeatherIcon} from "../../../utils/weatherIcon";
 
 const Title = styled.h1`
   margin-top: 5rem;
@@ -23,9 +24,13 @@ const InfoSection = styled.div`
 const PrimaryInfo = styled.div`
   margin-top: 3rem;
   display: flex;
+  border-radius: 1rem;
   div{
     display: flex;
     flex-direction: column;
+  }
+  &:hover{
+    box-shadow: 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.5);
   }
 `;
 
@@ -44,43 +49,23 @@ const SecondaryInfo = styled.span`
   flex-direction: column;
   justify-content: space-around;
   background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
+  border-radius: 1rem;
   font-size: 2rem;
   padding: 1rem 1rem;
+  &:hover{
+    box-shadow: 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.5);
+  }
 `;
 
 //当前天气组件
 const CurrentWeather = ({currentWeather}) => {
-    const renderWeatherIcon = () => {
-        if (currentWeather.weather === "Clear") {
-            return (
-                <ReactAnimatedWeather icon="CLEAR_DAY" size={128}/>
-            )
-        } else if (currentWeather.weather === "Clouds") {
-            return (
-                <ReactAnimatedWeather icon="PARTLY_CLOUDY_DAY" size={128}/>
-            )
-        } else if (currentWeather.weather === "Drizzle") {
-            return (
-                <ReactAnimatedWeather icon="RAIN" size={128}/>
-            )
-        } else if (currentWeather.weather === "Rain") {
-            return (
-                <ReactAnimatedWeather icon="SLEET" size={128}/>
-            )
-        } else {
-            return (
-                <ReactAnimatedWeather icon="CLOUDY" size={128}/>
-            )
-        }
-    }
     return (
         <>
             <Title>{currentWeather.city}</Title>
             <Subtitle>{currentWeather.date}</Subtitle>
             <InfoSection>
                 <PrimaryInfo>
-                    <span>{renderWeatherIcon()}</span>
+                    <ReactAnimatedWeather icon={findWeatherIcon(currentWeather.weather)} size={128}/>
                     <div>
                         <WeatherTemperature>{currentWeather.currentTemperature}&#176;</WeatherTemperature>
                         <WeatherDescription>{currentWeather.weatherDescription}</WeatherDescription>
