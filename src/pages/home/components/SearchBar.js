@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {SearchOutlined} from "@ant-design/icons";
-
+//搜索区域样式
 const SearchSection = styled.form`
   background: white;
   position: relative;
@@ -10,7 +10,7 @@ const SearchSection = styled.form`
   margin: 0 auto;
   border-radius: 20px;
 `;
-
+//搜索栏输入样式
 const SearchInput = styled.input`
   width: 90%;
   position: absolute;
@@ -20,7 +20,7 @@ const SearchInput = styled.input`
   height: 2rem;
   border-radius: 20px;
 `;
-
+//搜索图标样式
 const SearchIcon = styled.span`
   position: absolute;
   top: 0.8rem;

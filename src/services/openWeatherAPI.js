@@ -24,7 +24,7 @@ export async function getCurrentWeatherFromAPI(searchValue){
     })
 
 }
-
+//从后端获取天气预报的数据
 export async function getForecastWeatherFromAPI(searchValue){
     const forecastWeatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&APPID=${APIKey}&units=metric`;
     return new Promise(((resolve) => {

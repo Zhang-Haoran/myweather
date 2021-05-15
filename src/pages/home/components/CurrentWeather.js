@@ -15,7 +15,7 @@ const SecondaryInfo = styled.h4`
   
 `;
 
-
+//当前天气组件
 const CurrentWeather = ({currentWeather}) => {
     return (
         <>
