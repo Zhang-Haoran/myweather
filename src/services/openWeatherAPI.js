@@ -4,19 +4,17 @@ const APIKey = require("./config.json").APIKey;
 //GET current weather data from openWeather API
 export async function getCurrentWeatherFromAPI(searchValue){
     const currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&APPID=${APIKey}&units=metric`;
-    return new Promise((resolve, reject)=>{
+    return new Promise((resolve)=>{
         axios.get(currentWeatherURL).then((result)=>{
             const data = result.data;
             const date = new Date().toISOString().toString().split("T")[0];
             const currentWeather = {
                 city: data.name,
-                country: data.sys.country,
                 weatherDescription: data.weather[0].description,
                 weather: data.weather[0].main,
                 currentTemperature: data.main.temp,
                 highestTemperature: data.main.temp_max,
                 lowestTemperature: data.main.temp_min,
-                cloudsPercentage: data.clouds.all,
                 humidity: data.main.humidity,
                 windSpeed: data.wind.speed,
                 date
@@ -33,3 +31,4 @@ export async function getForecastWeatherFromAPI(searchValue){
         return result;
     })
 }
+

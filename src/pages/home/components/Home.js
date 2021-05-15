@@ -10,6 +10,9 @@ const HomeBackground = styled.div`
   background: url(${props => props.img});
   background-size: cover;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 `;
 const Home = () => {
     const [searchBarValue, setSearchBarValue] = useState("");

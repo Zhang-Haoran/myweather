@@ -4,7 +4,7 @@ import {SearchOutlined} from "@ant-design/icons";
 const SearchSection = styled.form`
   background: white;
   position: relative;
-  top: 5rem;
+  top: 2rem;
   width: 40rem;
   height: 3rem;
   margin: 0 auto;
