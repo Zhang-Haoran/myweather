@@ -39,8 +39,8 @@ const ForecastWeather = ({forecastWeather}) => {
         return (
             //每一个都是同样的样式
             <ForecastWeatherCard>
-                <div>{each.date}</div>
-                <div>{each.time}</div>
+                <div>{each.date.substr(5,5)}</div>
+                <div>{each.time.substr(0,5)}</div>
                 <ReactAnimatedWeather icon={findWeatherIcon(each.weather)} size={64}/>
                 <div>{each.temperature}&#176;</div>
             </ForecastWeatherCard>
