@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ReactAnimatedWeather from "react-animated-weather";
-import {findWeatherIcon} from "../../../utils/weatherIcon";
+import {findWeatherIcon} from "../../../utils/findWeatherIcon";
 //天气预报组件样式
 const ForecastWeatherSection = styled.section`
   display: flex;

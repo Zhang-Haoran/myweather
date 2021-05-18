@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ReactAnimatedWeather from 'react-animated-weather';
-import {findWeatherIcon} from "../../../utils/weatherIcon";
+import {findWeatherIcon} from "../../../utils/findWeatherIcon";
 
 const Title = styled.h1`
   margin-top: 5rem;
