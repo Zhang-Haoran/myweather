@@ -30,6 +30,7 @@ const ForecastTitle = styled.div`
   margin-left: 3rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  font-family: cursive;
   
 `;
 //天气预报组件

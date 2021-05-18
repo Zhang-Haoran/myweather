@@ -8,7 +8,7 @@ const Title = styled.h1`
   margin-left: 3rem;
   font-size: 3.5rem;
   font-weight: 50;
-  font-family: sans-serif;
+  font-family: cursive;
 `;
 
 const Subtitle = styled.h2`
