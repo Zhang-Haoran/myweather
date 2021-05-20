@@ -42,7 +42,7 @@ const ForecastWeather = ({forecastWeather}) => {
             <ForecastWeatherCard key={each.date+each.time}>
                 <div>{each.date.substr(5,5)}</div>
                 <div>{each.time.substr(0,5)}</div>
-                <ReactAnimatedWeather icon={findWeatherIcon(each.weather)} size={64}/>
+                <ReactAnimatedWeather icon={findWeatherIcon(each.weather,each.time)} size={64}/>
                 <div>{each.temperature}&#176;</div>
             </ForecastWeatherCard>
         )

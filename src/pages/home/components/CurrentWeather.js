@@ -65,7 +65,7 @@ const CurrentWeather = ({currentWeather}) => {
             <Subtitle>{currentWeather.date}</Subtitle>
             <InfoSection>
                 <PrimaryInfo>
-                    <ReactAnimatedWeather icon={findWeatherIcon(currentWeather.weather)} size={128}/>
+                    <ReactAnimatedWeather icon={findWeatherIcon(currentWeather.weather,new Date().toTimeString().split(" ")[0])} size={128}/>
                     <div>
                         <WeatherTemperature>{currentWeather.currentTemperature}&#176;</WeatherTemperature>
                         <WeatherDescription>{currentWeather.weatherDescription}</WeatherDescription>
