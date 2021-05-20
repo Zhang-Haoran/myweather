@@ -6,7 +6,7 @@ const SearchSection = styled.form`
   position: relative;
   top: 2rem;
   width: 40rem;
-  height: 3rem;
+  min-height: 3rem;
   margin: 0 auto;
   border-radius: 20px;
 `;
@@ -14,10 +14,10 @@ const SearchSection = styled.form`
 const SearchInput = styled.input`
   width: 90%;
   position: absolute;
-  top: 1rem;
+  top: 0.8rem;
   left: 8%;
   border: none;
-  height: 1rem;
+  height: 1.5rem;
   border-radius: 20px;
 `;
 //搜索图标样式
