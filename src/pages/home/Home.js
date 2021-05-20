@@ -1,10 +1,10 @@
-import SearchBar from "./SearchBar";
-import CurrentWeather from "./CurrentWeather";
+import SearchBar from "./components/SearchBar";
+import CurrentWeather from "./components/CurrentWeather";
 import styled from "styled-components";
-import img from '../../../assets/images/home.jpg';
+import img from '../../assets/images/home.jpg';
 import {useState} from "react";
-import {getCurrentWeatherFromAPI, getForecastWeatherFromAPI} from "../../../services/openWeatherAPI";
-import ForecastWeather from "./ForecastWeather";
+import {getCurrentWeatherFromAPI, getForecastWeatherFromAPI} from "../../services/openWeatherAPI";
+import ForecastWeather from "./components/ForecastWeather";
 
 //主页背景图片
 const HomeBackground = styled.div`

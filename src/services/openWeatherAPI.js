@@ -1,7 +1,7 @@
 import axios from "axios";
 const APIKey = require("./config.json").APIKey;
 
-//GET current weather data from openWeather API
+//从后端获取当天天气的数据
 export async function getCurrentWeatherFromAPI(searchValue){
     const currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&APPID=${APIKey}&units=metric`;
     return new Promise((resolve)=>{
@@ -31,16 +31,16 @@ export async function getForecastWeatherFromAPI(searchValue){
     return new Promise(((resolve) => {
         axios.get(forecastWeatherURL).then((result)=>{
             const forecastWeatherArray = [];
-            for (let each of result.data.list){
+            result.data.list.map((eachItem)=> {
                 const forecastWeatherObject = {
-                    date:each.dt_txt.split(" ")[0],
-                    time:each.dt_txt.split(" ")[1],
-                    temperature: each.main.temp,
-                    weather: each.weather[0].main,
-                    weatherDescription: each.weather[0].description
+                    date:eachItem.dt_txt.split(" ")[0],
+                    time:eachItem.dt_txt.split(" ")[1],
+                    temperature: eachItem.main.temp,
+                    weather: eachItem.weather[0].main,
+                    weatherDescription: eachItem.weather[0].description
                 };
                 forecastWeatherArray.push(forecastWeatherObject);
-            }
+            })
             resolve(forecastWeatherArray);
         })
     }))
