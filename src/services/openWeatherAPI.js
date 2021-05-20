@@ -40,6 +40,7 @@ export async function getForecastWeatherFromAPI(searchValue){
                     weatherDescription: eachItem.weather[0].description
                 };
                 forecastWeatherArray.push(forecastWeatherObject);
+                return forecastWeatherArray;
             })
             resolve(forecastWeatherArray);
         })

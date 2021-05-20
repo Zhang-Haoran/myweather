@@ -39,7 +39,7 @@ const ForecastWeather = ({forecastWeather}) => {
     const renderForecastCard = forecastWeather.map((each) => {
         return (
             //每一个都是同样的样式
-            <ForecastWeatherCard>
+            <ForecastWeatherCard key={each.date+each.time}>
                 <div>{each.date.substr(5,5)}</div>
                 <div>{each.time.substr(0,5)}</div>
                 <ReactAnimatedWeather icon={findWeatherIcon(each.weather)} size={64}/>
