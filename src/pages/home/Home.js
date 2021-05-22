@@ -51,7 +51,7 @@ const Home = () => {
             // 传入背景图片，需要import
             <HomeBackground img={img}>
                 {/*把onchange作为props传给子组件*/}
-                <SearchBar value = {searchBarValue} onChange = {handleSearchBarChange} submit = {handleSubmit}/>
+                <SearchBar value = {searchBarValue} onChange = {handleSearchBarChange} submit = {handleSubmit} isResultFetched={true}/>
                 {/*把当前天气的state传入 下一个组件*/}
                 <CurrentWeather currentWeather = {currentWeather}/>
                 {/*把天气预报state传入 下一个组件*/}
@@ -62,7 +62,7 @@ const Home = () => {
     return(
         <HomeBackground img={img}>
             {/*把onchange作为props传给子组件*/}
-            <SearchBar value = {searchBarValue} onChange = {handleSearchBarChange} submit = {handleSubmit}/>
+            <SearchBar value = {searchBarValue} onChange = {handleSearchBarChange} submit = {handleSubmit} isResultFetched ={false}/>
         </HomeBackground>
     )
 }
