@@ -5,6 +5,7 @@ import {findWeatherIcon} from "../../../utils/findWeatherIcon";
 const ForecastWeatherSection = styled.section`
   display: flex;
   overflow-x: scroll;
+  margin-bottom: 1rem;
 `;
 //天气预报卡片，针对每一个预报
 const ForecastWeatherCard = styled.div`
@@ -13,8 +14,8 @@ const ForecastWeatherCard = styled.div`
   opacity: 0.5;
   background-size: 10rem 10rem;
   height: 10rem;
-  margin: 1rem 2rem;
-  padding: 2.5rem 2.5rem;
+  margin: 0 1rem 0 1rem;
+  padding:  1rem 2.5rem 2rem 2.5rem;
   text-align: center;
   &:hover {
     box-shadow: 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.5);

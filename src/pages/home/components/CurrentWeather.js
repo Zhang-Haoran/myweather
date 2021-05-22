@@ -25,6 +25,7 @@ const PrimaryInfo = styled.div`
   margin-top: 3rem;
   display: flex;
   border-radius: 1rem;
+  padding: 1rem;
   div{
     display: flex;
     flex-direction: column;
@@ -50,8 +51,8 @@ const SecondaryInfo = styled.span`
   justify-content: space-around;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 1rem;
-  font-size: 2rem;
-  padding: 1rem 1rem;
+  font-size: 1.5rem;
+  padding: 1rem;
   &:hover{
     box-shadow: 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.5);
   }
