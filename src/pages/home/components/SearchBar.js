@@ -9,6 +9,7 @@ const SearchSection = styled.form`
   min-height: 3rem;
   margin: 0 auto;
   border-radius: 20px;
+  font-family: cursive;
 `;
 //搜索栏输入样式
 const SearchInput = styled.input`
@@ -19,6 +20,7 @@ const SearchInput = styled.input`
   border: none;
   height: 1.5rem;
   border-radius: 20px;
+  font-family: cursive;
 `;
 //搜索图标样式
 const SearchIcon = styled.span`
@@ -28,6 +30,7 @@ const SearchIcon = styled.span`
   height: 2rem;
   width: 2rem;
   font-size: 1.5rem;
+  font-family: cursive;
 `;
 
 // 参数从父组件传入
