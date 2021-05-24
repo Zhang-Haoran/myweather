@@ -13,7 +13,7 @@ const Background = styled.div`
   background-size: 100% 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
 `;
 // 主页组件
 const Home = () => {
