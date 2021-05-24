@@ -14,7 +14,6 @@ const HomeBackground = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  font-family: cursive;
 `;
 // 主页组件
 const Home = () => {
