@@ -22,7 +22,7 @@ export async function getCurrentWeatherFromAPI(searchValue){
             };
             resolve(currentWeather);
         }).catch((error)=>{
-            console.log(error.message);
+            alert("Current Weather Request failed");
         })
     })
 
@@ -46,7 +46,7 @@ export async function getForecastWeatherFromAPI(searchValue){
             })
             resolve(forecastWeatherArray);
         }).catch((error)=>{
-            console.log(error.message);
+            alert("Weather Forecast Request failed")
         })
     }))
 }
