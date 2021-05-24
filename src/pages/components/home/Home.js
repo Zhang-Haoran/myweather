@@ -9,8 +9,8 @@ import ForecastWeather from "./components/ForecastWeather";
 //主页背景图片
 const HomeBackground = styled.div`
   background: url(${props => props.img});
-  background-size: cover;
   height: 100vh;
+  background-size:100% 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
