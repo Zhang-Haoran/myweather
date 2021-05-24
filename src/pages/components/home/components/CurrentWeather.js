@@ -1,6 +1,10 @@
 import styled, {css} from "styled-components";
 import ReactAnimatedWeather from 'react-animated-weather';
 import {findWeatherIcon} from "../../../../utils/findWeatherIcon";
+import highest from "../../../../assets/highest.png";
+import lowest from "../../../../assets/lowest.png";
+import wind from "../../../../assets/wind.png";
+import humidity from "../../../../assets/humidity.png";
 
 const Flex = styled.div`
   display: flex;
@@ -52,6 +56,10 @@ const Subtitle = styled.h2`
   margin-left: 3rem;
   margin-top: 0;
 `;
+const Image = styled.img`
+  height: 1.5rem;
+  margin: 0.5rem;
+`;
 
 //当前天气组件
 const CurrentWeather = ({currentWeather}) => {
@@ -70,8 +78,14 @@ const CurrentWeather = ({currentWeather}) => {
                     </Flex>
                 </Card>
                 <Card type="Secondary">
-                    <div>Highest: {currentWeather.highestTemperature}&#176; Lowest: {currentWeather.lowestTemperature}&#176;</div>
-                    <div>Humidity: {currentWeather.humidity}% Wind: {currentWeather.windSpeed}mph</div>
+                    <div>
+                        <Image src={highest} alt="highest temperature"/>Highest: {currentWeather.highestTemperature}&#176;
+                        <Image src={humidity} alt="humidity"/>Humidity: {currentWeather.humidity}%
+                    </div>
+                    <div>
+                        <Image src={lowest} alt="lowest temperature"/>Lowest: {currentWeather.lowestTemperature}&#176;
+                        <Image src={wind} alt="wind"/>Wind: {currentWeather.windSpeed}mph
+                    </div>
                 </Card>
             </Flex>
         </>
