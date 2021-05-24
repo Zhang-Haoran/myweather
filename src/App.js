@@ -1,4 +1,4 @@
-import Home from "./pages/home";
+import Home from "./pages/components/home";
 
 //路由管理
 const App = ()=> {
