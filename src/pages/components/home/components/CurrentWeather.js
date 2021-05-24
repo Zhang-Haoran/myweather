@@ -25,13 +25,14 @@ const PrimaryInfo = styled.div`
   display: flex;
   border-radius: 1rem;
   padding: 1rem;
-  div{
-    display: flex;
-    flex-direction: column;
-  }
-  &:hover{
+
+  &:hover {
     box-shadow: 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.5);
   }
+`;
+const FlexVertical = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const WeatherDescription = styled.span`
@@ -52,7 +53,8 @@ const SecondaryInfo = styled.span`
   border-radius: 1rem;
   font-size: 1.5rem;
   padding: 1rem;
-  &:hover{
+
+  &:hover {
     box-shadow: 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.5);
   }
 `;
@@ -65,11 +67,13 @@ const CurrentWeather = ({currentWeather}) => {
             <Subtitle>{currentWeather.date}</Subtitle>
             <InfoSection>
                 <PrimaryInfo>
-                    <ReactAnimatedWeather icon={findWeatherIcon(currentWeather.weather,new Date().toTimeString().split(" ")[0])} size={128}/>
-                    <div>
+                    <ReactAnimatedWeather
+                        icon={findWeatherIcon(currentWeather.weather, new Date().toTimeString().split(" ")[0])}
+                        size={128}/>
+                    <FlexVertical>
                         <WeatherTemperature>{currentWeather.currentTemperature}&#176;</WeatherTemperature>
                         <WeatherDescription>{currentWeather.weatherDescription}</WeatherDescription>
-                    </div>
+                    </FlexVertical>
                 </PrimaryInfo>
                 <SecondaryInfo>
                     <div>Highest: {currentWeather.highestTemperature}&#176; Lowest: {currentWeather.lowestTemperature}&#176;</div>
