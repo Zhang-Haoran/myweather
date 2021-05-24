@@ -21,6 +21,8 @@ export async function getCurrentWeatherFromAPI(searchValue){
                 date
             };
             resolve(currentWeather);
+        }).catch((error)=>{
+            console.log(error.message);
         })
     })
 
@@ -43,6 +45,8 @@ export async function getForecastWeatherFromAPI(searchValue){
                 return forecastWeatherArray;
             })
             resolve(forecastWeatherArray);
+        }).catch((error)=>{
+            console.log(error.message);
         })
     }))
 }

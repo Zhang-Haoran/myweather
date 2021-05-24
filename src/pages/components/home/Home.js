@@ -36,7 +36,7 @@ const Home = () => {
         getCurrentWeatherFromAPI(searchBarValue).then((result) => {
             //改变当天天气的state
             setCurrentWeather(result);
-        });
+        })
         //从后端获取天气预报，异步
         getForecastWeatherFromAPI(searchBarValue).then((result) => {
             //改变天气预报的state
