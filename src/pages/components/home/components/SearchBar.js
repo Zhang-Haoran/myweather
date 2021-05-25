@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import {SearchOutlined} from "@ant-design/icons";
+import { SearchOutlined } from "@ant-design/icons";
 //搜索区域样式
 const SearchSection = styled.form`
   background: white;
   opacity: 65%;
   position: relative;
-  top: ${({ isResultFetched }) => (isResultFetched ? '5%' : '40%')};
+  top: ${({ isResultFetched }) => (isResultFetched ? "5%" : "40%")};
   width: 40rem;
   min-height: 3rem;
   margin: 0 auto;
@@ -24,7 +24,7 @@ const SearchInput = styled.input`
   border-radius: 20px;
   font-family: cursive;
   font-size: 1.5rem;
-  &:focus{
+  &:focus {
     outline: none;
   }
 `;
@@ -40,15 +40,20 @@ const SearchIcon = styled.span`
 `;
 
 // 参数从父组件传入
-const SearchBar = ({value,onChange,submit,isResultFetched}) => {
-    return (
-        <SearchSection isResultFetched={isResultFetched} onSubmit={submit}>
-            <SearchIcon>
-                <SearchOutlined/>
-            </SearchIcon>
-            {/*输入框onChange被设置为传入的参数，value也被作为参数传回*/}
-            <SearchInput type="text" placeholder="Enter your city" value={value} onChange={onChange}/>
-        </SearchSection>
-    )
-}
+const SearchBar = ({ value, onChange, submit, isResultFetched }) => {
+  return (
+    <SearchSection isResultFetched={isResultFetched} onSubmit={submit}>
+      <SearchIcon>
+        <SearchOutlined />
+      </SearchIcon>
+      {/*输入框onChange被设置为传入的参数，value也被作为参数传回*/}
+      <SearchInput
+        type="text"
+        placeholder="Enter your city"
+        value={value}
+        onChange={onChange}
+      />
+    </SearchSection>
+  );
+};
 export default SearchBar;

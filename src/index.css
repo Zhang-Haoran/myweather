@@ -7,8 +7,8 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 ::-webkit-scrollbar {
@@ -18,10 +18,10 @@ code {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 1em;
-  background-color: rgba(50, 50, 50, .3);
+  background-color: rgba(50, 50, 50, 0.3);
 }
 
 ::-webkit-scrollbar-track {
   border-radius: 1em;
-  background-color: rgba(50, 50, 50, .1);
+  background-color: rgba(50, 50, 50, 0.1);
 }
