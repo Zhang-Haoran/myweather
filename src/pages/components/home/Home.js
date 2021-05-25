@@ -50,27 +50,17 @@ const Home = () => {
   //短路计算，当当前天气和天气预报的state不为undefined，显示当前天气和天气预报
   return (
     <Background img={img}>
-      {currentWeather && forecastWeather && (
         <SearchBar
           value={searchBarValue}
           onChange={handleSearchBarChange}
           submit={handleSubmit}
-          isResultFetched={true}
+          isResultFetched={(currentWeather && forecastWeather)}
         />
-      )}
       {currentWeather && forecastWeather && (
         <CurrentWeather currentWeather={currentWeather} />
       )}
       {currentWeather && forecastWeather && (
         <ForecastWeather forecastWeather={forecastWeather} />
-      )}
-      {!(currentWeather && forecastWeather) && (
-        <SearchBar
-          value={searchBarValue}
-          onChange={handleSearchBarChange}
-          submit={handleSubmit}
-          isResultFetched={false}
-        />
       )}
     </Background>
   );

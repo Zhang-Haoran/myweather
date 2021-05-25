@@ -49,7 +49,7 @@ const ForecastWeather = ({ forecastWeather }) => {
           icon={findWeatherIcon(each.weather, each.time)}
           size={64}
         />
-        <Text>{each.temperature}&#176;</Text>
+        <Text>{each.temperature.toFixed(1)}&#176;</Text>
       </ForecastWeatherCard>
     );
   });

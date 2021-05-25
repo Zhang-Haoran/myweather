@@ -86,7 +86,7 @@ const CurrentWeather = ({ currentWeather }) => {
           />
           <Flex type="Vertical">
             <Description type="Temperature">
-              {currentWeather.currentTemperature}&#176;
+              {currentWeather.currentTemperature.toFixed(1)}&#176;
             </Description>
             <Description type="Description">
               {currentWeather.weatherDescription}
@@ -96,13 +96,13 @@ const CurrentWeather = ({ currentWeather }) => {
         <Card type="Secondary">
           <div>
             <Image src={highest} alt="highest temperature" />
-            Highest: {currentWeather.highestTemperature}&#176;
+            Highest: {currentWeather.highestTemperature.toFixed(1)}&#176;
             <Image src={humidity} alt="humidity" />
             Humidity: {currentWeather.humidity}%
           </div>
           <div>
             <Image src={lowest} alt="lowest temperature" />
-            Lowest: {currentWeather.lowestTemperature}&#176;
+            Lowest: {currentWeather.lowestTemperature.toFixed(1)}&#176;
             <Image src={wind} alt="wind" />
             Wind: {currentWeather.windSpeed}mph
           </div>
