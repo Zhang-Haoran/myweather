@@ -5,10 +5,13 @@ const APIKey = require("./config.json").APIKey;
 export async function getCurrentWeatherFromAPI(searchValue){
     const currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&APPID=${APIKey}&units=metric`;
     return new Promise((resolve)=>{
-        axios.get(currentWeatherURL).then((result)=>{
+        axios.get(currentWeatherURL)
+            .then((result)=>{
             const data = result.data;
             const dateString = new Date().toString();
+            //处理日期格式
             const date = `${dateString.split(" ")[0]} ${dateString.split(" ")[1]} ${dateString.split(" ")[2]} ${dateString.split(" ")[3]}`
+            //构造需要的数据
             const currentWeather = {
                 city: data.name,
                 weatherDescription: data.weather[0].description,
@@ -21,7 +24,8 @@ export async function getCurrentWeatherFromAPI(searchValue){
                 date
             };
             resolve(currentWeather);
-        }).catch((error)=>{
+        })
+            .catch(()=>{
             alert("Current Weather Request failed");
         })
     })
@@ -31,9 +35,11 @@ export async function getCurrentWeatherFromAPI(searchValue){
 export async function getForecastWeatherFromAPI(searchValue){
     const forecastWeatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&APPID=${APIKey}&units=metric`;
     return new Promise(((resolve) => {
-        axios.get(forecastWeatherURL).then((result)=>{
+        axios.get(forecastWeatherURL)
+            .then((result)=>{
             const forecastWeatherArray = [];
             result.data.list.map((eachItem)=> {
+                //构造需要的数据
                 const forecastWeatherObject = {
                     date:eachItem.dt_txt.split(" ")[0],
                     time:eachItem.dt_txt.split(" ")[1],
@@ -45,7 +51,8 @@ export async function getForecastWeatherFromAPI(searchValue){
                 return forecastWeatherArray;
             })
             resolve(forecastWeatherArray);
-        }).catch((error)=>{
+        })
+            .catch(()=>{
             alert("Weather Forecast Request failed")
         })
     }))

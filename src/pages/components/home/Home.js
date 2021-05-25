@@ -33,12 +33,14 @@ const Home = () => {
         //阻止页面跳转
         event.preventDefault();
         //从后端获取天气数据，异步
-        getCurrentWeatherFromAPI(searchBarValue).then((result) => {
+        getCurrentWeatherFromAPI(searchBarValue)
+            .then((result) => {
             //改变当天天气的state
             setCurrentWeather(result);
         })
         //从后端获取天气预报，异步
-        getForecastWeatherFromAPI(searchBarValue).then((result) => {
+        getForecastWeatherFromAPI(searchBarValue)
+            .then((result) => {
             //改变天气预报的state
             setForecastWeather(result);
         })
