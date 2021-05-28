@@ -58,7 +58,7 @@ const Home = () => {
       Rain,
       Cloudy
     }
-    return currentWeather ? background[currentWeather.weather] : background["Cloudy"]
+    return currentWeather && currentWeather.weather && background[currentWeather.weather] ? background[currentWeather.weather]: background["Cloudy"]
   }
 
   //短路计算，当当前天气和天气预报的state不为undefined，显示当前天气和天气预报

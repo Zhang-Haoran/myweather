@@ -29,7 +29,7 @@ export async function getCurrentWeatherFromAPI(searchValue) {
         resolve(currentWeather);
       })
       .catch(() => {
-        alert("Current Weather Request failed");
+        alert("Can't find current weather");
       });
   });
 }
@@ -56,7 +56,7 @@ export async function getForecastWeatherFromAPI(searchValue) {
         resolve(forecastWeatherArray);
       })
       .catch(() => {
-        alert("Weather Forecast Request failed");
+        alert("can't find weather forecast");
       });
   });
 }
