@@ -1,11 +1,12 @@
 import styled, {css} from "styled-components";
+import responsive from "../../../../../../responsive/responsive";
 
 const Card = styled.div`
-  margin-top: 3rem;
   display: flex;
   border-radius: 1rem;
   font-size: 1.5rem;
   padding: 1rem;
+  margin-top: 1rem;
 
   &:hover {
     box-shadow: 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.5);
@@ -20,6 +21,25 @@ const Card = styled.div`
       font-size: 1.5rem;
       backdrop-filter: blur(10px);
     `}
+
+  @media only screen and ${responsive.xs}{
+    font-size: 0.5rem;
+  };
+  @media only screen and ${responsive.sm}{
+    font-size: 0.8rem;
+  };
+  
+  @media only screen and  ${responsive.md}{
+    font-size: 1rem;
+  };
+  
+  @media only screen and  ${responsive.lg}{
+    font-size: 1.2rem;
+  };
+  
+  @media only screen and  ${responsive.xl}{
+    font-size: 1.5rem;
+  };
 `;
 
 export default Card;
