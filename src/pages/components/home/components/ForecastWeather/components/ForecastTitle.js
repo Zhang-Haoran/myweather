@@ -6,24 +6,24 @@ const ForecastTitle = styled.div`
   margin-left: 3rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
-  @media only screen and ${responsive.xs}{
+  @media only screen and ${responsive.xs} {
     font-size: 1rem;
-  };
-  @media only screen and ${responsive.sm}{
+  }
+  @media only screen and ${responsive.sm} {
     font-size: 1.5rem;
-  };
+  }
 
-  @media only screen and  ${responsive.md}{
+  @media only screen and ${responsive.md} {
     font-size: 2rem;
-  };
+  }
 
-  @media only screen and  ${responsive.lg}{
+  @media only screen and ${responsive.lg} {
     font-size: 2.5rem;
-  };
+  }
 
-  @media only screen and  ${responsive.xl}{
+  @media only screen and ${responsive.xl} {
     font-size: 3rem;
-  };
+  } ;
 `;
 
 export default ForecastTitle;

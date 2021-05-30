@@ -2,9 +2,9 @@ import SearchBar from "./components/SearchBar";
 import CurrentWeather from "./components/CurrentWeather";
 import styled from "styled-components";
 import Cloudy from "../../../assets/Cloudy.jpg";
-import Clear from "../../../assets/Clear.jpg"
-import Clouds from "../../../assets/Clouds.jpg"
-import Rain from "../../../assets/Rain.jpg"
+import Clear from "../../../assets/Clear.jpg";
+import Clouds from "../../../assets/Clouds.jpg";
+import Rain from "../../../assets/Rain.jpg";
 import { useState } from "react";
 import {
   getCurrentWeatherFromAPI,
@@ -51,25 +51,29 @@ const Home = () => {
   };
 
   //根据当前天气背景切换
-  const handleBackground = () =>{
+  const handleBackground = () => {
     const background = {
       Clouds,
       Clear,
       Rain,
-      Cloudy
-    }
-    return currentWeather && currentWeather.weather && background[currentWeather.weather] ? background[currentWeather.weather]: background["Cloudy"]
-  }
+      Cloudy,
+    };
+    return currentWeather &&
+      currentWeather.weather &&
+      background[currentWeather.weather]
+      ? background[currentWeather.weather]
+      : background["Cloudy"];
+  };
 
   //短路计算，当当前天气和天气预报的state不为undefined，显示当前天气和天气预报
   return (
     <Background img={handleBackground}>
-        <SearchBar
-          value={searchBarValue}
-          onChange={handleSearchBarChange}
-          submit={handleSubmit}
-          isResultFetched={(currentWeather && forecastWeather)}
-        />
+      <SearchBar
+        value={searchBarValue}
+        onChange={handleSearchBarChange}
+        submit={handleSubmit}
+        isResultFetched={currentWeather && forecastWeather}
+      />
       {currentWeather && forecastWeather && (
         <CurrentWeather currentWeather={currentWeather} />
       )}

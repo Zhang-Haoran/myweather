@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 import responsive from "../../../../../../responsive/responsive";
 
 const Card = styled.div`
@@ -22,24 +22,24 @@ const Card = styled.div`
       backdrop-filter: blur(10px);
     `}
 
-  @media only screen and ${responsive.xs}{
+  @media only screen and ${responsive.xs} {
     font-size: 0.5rem;
-  };
-  @media only screen and ${responsive.sm}{
+  }
+  @media only screen and ${responsive.sm} {
     font-size: 0.8rem;
-  };
-  
-  @media only screen and  ${responsive.md}{
+  }
+
+  @media only screen and ${responsive.md} {
     font-size: 1rem;
-  };
-  
-  @media only screen and  ${responsive.lg}{
+  }
+
+  @media only screen and ${responsive.lg} {
     font-size: 1.2rem;
-  };
-  
-  @media only screen and  ${responsive.xl}{
+  }
+
+  @media only screen and ${responsive.xl} {
     font-size: 1.5rem;
-  };
+  } ;
 `;
 
 export default Card;

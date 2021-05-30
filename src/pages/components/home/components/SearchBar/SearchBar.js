@@ -3,8 +3,6 @@ import SearchSection from "./components/SearchSection";
 import SearchInput from "./components/SearchInput";
 import SearchIcon from "./components/SearchIcon";
 
-
-
 // 参数从父组件传入
 const SearchBar = ({ value, onChange, submit, isResultFetched }) => {
   return (

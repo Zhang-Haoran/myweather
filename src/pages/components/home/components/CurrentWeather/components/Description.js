@@ -1,48 +1,48 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 import responsive from "../../../../../../responsive/responsive";
 
 const Description = styled.span`
   margin-left: 3rem;
   font-size: 2rem;
-  @media only screen and ${responsive.xs}{
+  @media only screen and ${responsive.xs} {
     font-size: 1rem;
-  };
-  @media only screen and ${responsive.sm}{
+  }
+  @media only screen and ${responsive.sm} {
     font-size: 1.25rem;
-  };
+  }
 
-  @media only screen and  ${responsive.md}{
+  @media only screen and ${responsive.md} {
     font-size: 1.5rem;
-  };
+  }
 
-  @media only screen and  ${responsive.lg}{
+  @media only screen and ${responsive.lg} {
     font-size: 1.75rem;
-  };
+  }
 
-  @media only screen and  ${responsive.xl}{
+  @media only screen and ${responsive.xl} {
     font-size: 2rem;
-  };
+  }
   ${(props) =>
     props.type === "Temperature" &&
     css`
-      @media only screen and ${responsive.xs}{
+      @media only screen and ${responsive.xs} {
         font-size: 1rem;
-      };
-      @media only screen and ${responsive.sm}{
+      }
+      @media only screen and ${responsive.sm} {
         font-size: 2rem;
-      };
+      }
 
-      @media only screen and  ${responsive.md}{
+      @media only screen and ${responsive.md} {
         font-size: 3rem;
-      };
+      }
 
-      @media only screen and  ${responsive.lg}{
+      @media only screen and ${responsive.lg} {
         font-size: 4rem;
-      };
+      }
 
-      @media only screen and  ${responsive.xl}{
+      @media only screen and ${responsive.xl} {
         font-size: 5rem;
-      };
+      } ;
     `}
 `;
 

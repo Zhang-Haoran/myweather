@@ -10,23 +10,22 @@ import Card from "./components/Card";
 import Title from "./components/Title";
 import Subtitle from "./components/Subtitle";
 import Image from "./components/Image";
-import {resizeWeatherIcon} from "../../../../../utils/resizeWeatherIcon";
-import {useState,useEffect} from "react";
+import { resizeWeatherIcon } from "../../../../../utils/resizeWeatherIcon";
+import { useState, useEffect } from "react";
 
 //当前天气组件
 const CurrentWeather = ({ currentWeather }) => {
   const [windowSize, setWindowSize] = useState(128);
 
   //每次渲染运行
-  useEffect(()=>{
-    const handleResize = () =>{
-      setWindowSize(resizeWeatherIcon(window,"current"))
-    }
-    window.addEventListener('resize',handleResize);
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize(resizeWeatherIcon(window, "current"));
+    };
+    window.addEventListener("resize", handleResize);
     //当组件卸载时，clean up
-    return () => window.removeEventListener('resize', handleResize);
-
-  },[])
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <>
       <Title>{currentWeather.city}</Title>
