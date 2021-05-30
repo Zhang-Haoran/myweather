@@ -16,7 +16,8 @@ import ForecastWeather from "./components/ForecastWeather";
 const Background = styled.div`
   background: url(${(props) => props.img});
   height: 100vh;
-  background-size: 100% 100%;
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
