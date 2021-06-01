@@ -7,18 +7,18 @@ const ForecastTitle = styled.div`
   margin-bottom: 1rem;
   margin-top: 1rem;
   @media only screen and ${responsive.xs} {
-    font-size: 1rem;
+    font-size: 2rem;
   }
   @media only screen and ${responsive.sm} {
-    font-size: 1.5rem;
+    font-size: 3rem;
   }
 
   @media only screen and ${responsive.md} {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   @media only screen and ${responsive.lg} {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   @media only screen and ${responsive.xl} {

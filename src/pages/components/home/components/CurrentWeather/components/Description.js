@@ -5,18 +5,18 @@ const Description = styled.span`
   margin-left: 3rem;
   font-size: 2rem;
   @media only screen and ${responsive.xs} {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   @media only screen and ${responsive.sm} {
-    font-size: 1.25rem;
+    font-size: 2rem;
   }
 
   @media only screen and ${responsive.md} {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   @media only screen and ${responsive.lg} {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 
   @media only screen and ${responsive.xl} {
@@ -26,18 +26,18 @@ const Description = styled.span`
     props.type === "Temperature" &&
     css`
       @media only screen and ${responsive.xs} {
-        font-size: 1rem;
+        font-size: 4rem;
       }
       @media only screen and ${responsive.sm} {
-        font-size: 2rem;
+        font-size: 5rem;
       }
 
       @media only screen and ${responsive.md} {
-        font-size: 3rem;
+        font-size: 5rem;
       }
 
       @media only screen and ${responsive.lg} {
-        font-size: 4rem;
+        font-size: 5rem;
       }
 
       @media only screen and ${responsive.xl} {

@@ -15,7 +15,7 @@ import ForecastWeather from "./components/ForecastWeather";
 //主页背景图片
 const Background = styled.div`
   background: url(${(props) => props.img});
-  height: 100vh;
+  height: 792px;
   background-size: cover;
   background-position: center;
   display: flex;

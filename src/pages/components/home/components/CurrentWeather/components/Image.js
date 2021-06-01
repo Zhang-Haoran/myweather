@@ -6,18 +6,18 @@ const Image = styled.img`
   margin-right: 0.5rem;
   margin-left: 0.5rem;
   @media only screen and ${responsive.xs} {
-    height: 0.5rem;
+    height: 1rem;
   }
   @media only screen and ${responsive.sm} {
-    height: 0.8rem;
+    height: 1.5rem;
   }
 
   @media only screen and ${responsive.md} {
-    height: 1rem;
+    height: 1.5rem;
   }
 
   @media only screen and ${responsive.lg} {
-    height: 1.2rem;
+    height: 1.5rem;
   }
 
   @media only screen and ${responsive.xl} {

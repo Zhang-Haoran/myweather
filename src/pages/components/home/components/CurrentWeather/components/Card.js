@@ -23,23 +23,23 @@ const Card = styled.div`
     `}
 
   @media only screen and ${responsive.xs} {
-    font-size: 0.5rem;
-  }
+    font-size: 1rem;
+  };
   @media only screen and ${responsive.sm} {
-    font-size: 0.8rem;
-  }
+    font-size: 1.5rem;
+  };
 
   @media only screen and ${responsive.md} {
-    font-size: 1rem;
-  }
+    font-size: 1.5rem;
+  };
 
   @media only screen and ${responsive.lg} {
-    font-size: 1.2rem;
-  }
+    font-size: 1.5rem;
+  };
 
   @media only screen and ${responsive.xl} {
     font-size: 1.5rem;
-  } ;
+  };
 `;
 
 export default Card;

@@ -17,27 +17,27 @@ const ForecastWeatherCard = styled.div`
     box-shadow: 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.5);
   }
   @media only screen and ${responsive.xs} {
-    background-size: 4rem 4rem;
-    height: 4rem;
+    background-size: 7rem 7rem;
+    height: 8rem;
   }
   @media only screen and ${responsive.sm} {
-    background-size: 5rem 5rem;
-    height: 5rem;
+    background-size: 8rem 8rem;
+    height: 9rem;
   }
 
   @media only screen and ${responsive.md} {
-    background-size: 6rem 6rem;
-    height: 6rem;
+    background-size: 8rem 8rem;
+    height: 9rem;
   }
 
   @media only screen and ${responsive.lg} {
-    background-size: 7rem 7rem;
-    height: 7rem;
+    background-size: 8rem 8rem;
+    height: 9rem;
   }
 
   @media only screen and ${responsive.xl} {
     background-size: 8rem 8rem;
-    height: 8rem;
+    height: 9rem;
   } ;
 `;
 
