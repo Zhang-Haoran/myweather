@@ -13,14 +13,13 @@ import {
 import Forecast from "./components/Forecast";
 
 //主页背景图片
-const Background = styled.div`
-  background: url(${(props) => props.img});
+const Container = styled.div`
+  background: url(${(props) => props.img}) center;
   height: 792px;
   background-size: cover;
-  background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 // 主页组件
 const Weather = () => {
@@ -68,7 +67,7 @@ const Weather = () => {
 
   //短路计算，当当前天气和天气预报的state不为undefined，显示当前天气和天气预报
   return (
-    <Background img={handleBackground}>
+    <Container img={handleBackground}>
       <SearchBar
         value={searchBarValue}
         onChange={handleSearchBarChange}
@@ -81,7 +80,7 @@ const Weather = () => {
       {currentWeather && forecastWeather && (
         <Forecast forecastWeather={forecastWeather} />
       )}
-    </Background>
+    </Container>
   );
 };
 export default Weather;
