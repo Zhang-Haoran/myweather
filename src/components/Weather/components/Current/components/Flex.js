@@ -1,7 +1,7 @@
 import styled from "styled-components";
-const Container = styled.section`
+const Flex = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 1rem;
+  justify-content: center;
 `;
-export default Container;
+export default Flex;

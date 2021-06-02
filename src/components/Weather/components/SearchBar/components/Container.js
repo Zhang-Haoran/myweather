@@ -1,6 +1,6 @@
 import styled from "styled-components";
 //搜索区域样式
-const SearchContainer = styled.form`
+const Container = styled.form`
   background: white;
   opacity: 65%;
   position: relative;
@@ -13,4 +13,4 @@ const SearchContainer = styled.form`
   transition: 0.1s;
 `;
 
-export default SearchContainer;
+export default Container;

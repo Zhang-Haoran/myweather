@@ -1,22 +1,22 @@
 import { SearchOutlined } from "@ant-design/icons";
-import SearchContainer from "./components/SearchContainer";
-import SearchInput from "./components/SearchInput";
-import SearchIcon from "./components/SearchIcon";
+import Container from "./components/Container";
+import Input from "./components/Input";
+import Icon from "./components/Icon";
 
 // 参数从父组件传入
 const SearchBar = ({ value, onChange, submit, isResultFetched }) => {
   return (
-    <SearchContainer isResultFetched={isResultFetched} onSubmit={submit}>
-      <SearchIcon>
+    <Container isResultFetched={isResultFetched} onSubmit={submit}>
+      <Icon>
         <SearchOutlined />
-      </SearchIcon>
-      <SearchInput
+      </Icon>
+      <Input
         type="text"
         placeholder="Enter your city (eg. Melbourne,au)"
         value={value}
         onChange={onChange}
       />
-    </SearchContainer>
+    </Container>
   );
 };
 export default SearchBar;

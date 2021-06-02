@@ -15,7 +15,7 @@ import Forecast from "./components/Forecast";
 //主页背景图片
 const Container = styled.div`
   background: url(${(props) => props.img}) center;
-  height: 792px;
+  height: 1200px;
   background-size: cover;
   display: flex;
   flex-direction: column;

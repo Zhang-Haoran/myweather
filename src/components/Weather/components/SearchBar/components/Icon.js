@@ -1,7 +1,7 @@
 //搜索图标样式
 import styled from "styled-components";
 
-const SearchIcon = styled.span`
+const Icon = styled.span`
   position: absolute;
   top: 0.8rem;
   left: 1rem;
@@ -11,4 +11,4 @@ const SearchIcon = styled.span`
   font-family: cursive;
 `;
 
-export default SearchIcon;
+export default Icon;

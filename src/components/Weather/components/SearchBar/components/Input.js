@@ -1,7 +1,7 @@
 //搜索栏输入样式
 import styled from "styled-components";
 
-const SearchInput = styled.input`
+const Input = styled.input`
   width: 90%;
   position: absolute;
   left: 10%;
@@ -16,4 +16,4 @@ const SearchInput = styled.input`
   }
 `;
 
-export default SearchInput;
+export default Input;
