@@ -1,16 +1,16 @@
 import SearchBar from "./components/SearchBar";
-import CurrentWeather from "./components/CurrentWeather";
+import Current from "./components/Current";
 import styled from "styled-components";
-import Cloudy from "../../../assets/Cloudy.jpg";
-import Clear from "../../../assets/Clear.jpg";
-import Clouds from "../../../assets/Clouds.jpg";
-import Rain from "../../../assets/Rain.jpg";
+import Cloudy from "../../assets/Cloudy.jpg";
+import Clear from "../../assets/Clear.jpg";
+import Clouds from "../../assets/Clouds.jpg";
+import Rain from "../../assets/Rain.jpg";
 import { useState } from "react";
 import {
   getCurrentWeatherFromAPI,
   getForecastWeatherFromAPI,
-} from "../../../services/openWeatherAPI";
-import ForecastWeather from "./components/ForecastWeather";
+} from "../../services/openWeatherAPI";
+import Forecast from "./components/Forecast";
 
 //主页背景图片
 const Background = styled.div`
@@ -23,7 +23,7 @@ const Background = styled.div`
   justify-content: space-between;
 `;
 // 主页组件
-const Home = () => {
+const Weather = () => {
   //搜索栏数值
   const [searchBarValue, setSearchBarValue] = useState("");
   //当前天气，从后端获取
@@ -76,12 +76,12 @@ const Home = () => {
         isResultFetched={currentWeather && forecastWeather}
       />
       {currentWeather && forecastWeather && (
-        <CurrentWeather currentWeather={currentWeather} />
+        <Current currentWeather={currentWeather} />
       )}
       {currentWeather && forecastWeather && (
-        <ForecastWeather forecastWeather={forecastWeather} />
+        <Forecast forecastWeather={forecastWeather} />
       )}
     </Background>
   );
 };
-export default Home;
+export default Weather;

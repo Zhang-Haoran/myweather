@@ -1,23 +1,22 @@
 import { SearchOutlined } from "@ant-design/icons";
-import SearchSection from "./components/SearchSection";
+import SearchContainer from "./components/SearchContainer";
 import SearchInput from "./components/SearchInput";
 import SearchIcon from "./components/SearchIcon";
 
 // 参数从父组件传入
 const SearchBar = ({ value, onChange, submit, isResultFetched }) => {
   return (
-    <SearchSection isResultFetched={isResultFetched} onSubmit={submit}>
+    <SearchContainer isResultFetched={isResultFetched} onSubmit={submit}>
       <SearchIcon>
         <SearchOutlined />
       </SearchIcon>
-      {/*输入框onChange被设置为传入的参数，value也被作为参数传回*/}
       <SearchInput
         type="text"
-        placeholder="Enter your city"
+        placeholder="Enter your city (eg. Melbourne,au)"
         value={value}
         onChange={onChange}
       />
-    </SearchSection>
+    </SearchContainer>
   );
 };
 export default SearchBar;

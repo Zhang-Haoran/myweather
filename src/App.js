@@ -1,10 +1,10 @@
-import Home from "./pages/components/home";
+import Weather from "./components/Weather";
 
 //路由管理
 const App = () => {
   return (
     <>
-      <Home />
+      <Weather />
     </>
   );
 };
