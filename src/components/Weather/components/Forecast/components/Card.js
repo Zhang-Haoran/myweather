@@ -7,7 +7,7 @@ const Card = styled.div`
   border-radius: 1rem;
   text-align: center;
   flex-shrink: 0;
-  &:hover{
+  &:hover {
     box-shadow: 0 0.2rem 0.5rem 0 black;
   }
 `;

@@ -1,4 +1,4 @@
 const responsive = {
-    md: `(max-width: 768px)`
-}
+  md: `(max-width: 768px)`,
+};
 export default responsive;
