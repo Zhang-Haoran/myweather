@@ -30,8 +30,8 @@ const Current = ({currentWeather}) => {
                 </Card>
                 <Card type="Wind">
                     <Text type="Other"><Image src={highest}/>Highest: {currentWeather.highestTemperature.toFixed(1)}&#176;</Text>
-                    <Text type="Other"><Image src={humidity}/>Humidity: {currentWeather.humidity}%</Text>
                     <Text type="Other"><Image src={lowest}/>Lowest: {currentWeather.lowestTemperature.toFixed(1)}&#176;</Text>
+                    <Text type="Other"><Image src={humidity}/>Humidity: {currentWeather.humidity}%</Text>
                     <Text type="Other"><Image src={wind}/>Wind: {currentWeather.windSpeed}mph</Text>
                 </Card>
             </Body>
