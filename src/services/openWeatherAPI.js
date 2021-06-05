@@ -40,23 +40,21 @@ export async function getCurrentWeatherFromAPI(searchValue) {
 export async function getForecastWeatherFromAPI(searchValue) {
   const forecastWeatherURL = `${API_URL}forecast?q=${searchValue}&APPID=${API_KEY}&units=metric`;
   return new Promise((resolve) => {
-    axios
-      .get(forecastWeatherURL)
-      .then((result) => {
-        const forecastWeatherArray = [];
-        result.data.list.map((eachItem) => {
-          //构造需要的数据
-          const forecastWeatherObject = {
-            date: eachItem.dt_txt.split(" ")[0],
-            time: eachItem.dt_txt.split(" ")[1],
-            temperature: eachItem.main.temp,
-            weather: eachItem.weather[0].main,
-            weatherDescription: eachItem.weather[0].description,
-          };
-          forecastWeatherArray.push(forecastWeatherObject);
-          return forecastWeatherArray;
-        });
-        resolve(forecastWeatherArray);
-      })
+    axios.get(forecastWeatherURL).then((result) => {
+      const forecastWeatherArray = [];
+      result.data.list.map((eachItem) => {
+        //构造需要的数据
+        const forecastWeatherObject = {
+          date: eachItem.dt_txt.split(" ")[0],
+          time: eachItem.dt_txt.split(" ")[1],
+          temperature: eachItem.main.temp,
+          weather: eachItem.weather[0].main,
+          weatherDescription: eachItem.weather[0].description,
+        };
+        forecastWeatherArray.push(forecastWeatherObject);
+        return forecastWeatherArray;
+      });
+      resolve(forecastWeatherArray);
+    });
   });
 }

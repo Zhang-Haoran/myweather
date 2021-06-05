@@ -1,5 +1,5 @@
 import { SearchOutlined } from "@ant-design/icons";
-import {Form,Icon,Input} from "./styles";
+import { Form, Icon, Input } from "./styles";
 // 参数从父组件传入
 const SearchBar = ({ value, onChange, submit, isResultFetched }) => {
   return (

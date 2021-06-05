@@ -4,13 +4,12 @@ import highest from "../../../../assets/images/highest.png";
 import lowest from "../../../../assets/images/lowest.png";
 import wind from "../../../../assets/images/wind.png";
 import humidity from "../../../../assets/images/humidity.png";
-import {Body, Card, Container, Flex, Image, Text, Title} from "./styles";
+import { Body, Card, Container, Flex, Image, Text, Title } from "./styles";
 
 const Current = ({ currentWeather }) => {
   return (
     <Container>
-      <
-        Title type="Title">
+      <Title type="Title">
         {currentWeather.city},{currentWeather.country}
       </Title>
       <Title type="Subtitle">{currentWeather.date}</Title>

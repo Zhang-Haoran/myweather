@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.section`
   display: flex;
@@ -9,7 +9,7 @@ export const Container = styled.section`
 export const Body = styled.div`
   display: flex;
   justify-content: space-around;
-  @media(max-width: 768px){
+  @media (max-width: 768px) {
     flex-direction: column;
   }
 `;

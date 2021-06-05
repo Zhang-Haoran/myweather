@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import Current from "./components/Current";
 import Cloudy from "../../assets/images/Cloudy.jpg";
@@ -10,7 +10,7 @@ import {
   getForecastWeatherFromAPI,
 } from "../../services/openWeatherAPI";
 import Forecast from "./components/Forecast";
-import {Container} from "./styles";
+import { Container } from "./styles";
 
 // 主页组件
 const Weather = () => {
@@ -49,24 +49,27 @@ const Weather = () => {
       Rain,
       Cloudy,
     };
-    return (currentWeather && background[currentWeather.weather]) || background["Cloudy"];
+    return (
+      (currentWeather && background[currentWeather.weather]) ||
+      background["Cloudy"]
+    );
   };
 
   //短路计算，当当前天气和天气预报的state不为undefined，显示当前天气和天气预报
   return (
     <Container img={handleBackground}>
-        <SearchBar
-          value={searchBarValue}
-          onChange={handleSearchBarChange}
-          submit={handleSubmit}
-          isResultFetched={currentWeather && forecastWeather}
-        />
-        {currentWeather && forecastWeather && (
-          <Current currentWeather={currentWeather} />
-        )}
-        {currentWeather && forecastWeather && (
-          <Forecast forecastWeather={forecastWeather} />
-        )}
+      <SearchBar
+        value={searchBarValue}
+        onChange={handleSearchBarChange}
+        submit={handleSubmit}
+        isResultFetched={currentWeather && forecastWeather}
+      />
+      {currentWeather && forecastWeather && (
+        <Current currentWeather={currentWeather} />
+      )}
+      {currentWeather && forecastWeather && (
+        <Forecast forecastWeather={forecastWeather} />
+      )}
     </Container>
   );
 };
