@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 //主页背景图片
 export const Container = styled.div`
   background: url(${({ img }) => img}) center;
@@ -8,7 +8,11 @@ export const Container = styled.div`
   justify-content: space-between;
   height: 100vh;
   @media (max-height: 718px) {
-    height: 100%;
+    ${({ isResultFetched }) =>
+      isResultFetched &&
+      css`
+        height: 100%;
+      `}
   }
   @media (max-width: 509px) {
     width: 100vh;

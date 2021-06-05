@@ -57,7 +57,10 @@ const Weather = () => {
 
   //短路计算，当当前天气和天气预报的state不为undefined，显示当前天气和天气预报
   return (
-    <Container img={handleBackground}>
+    <Container
+      img={handleBackground}
+      isResultFetched={currentWeather && forecastWeather}
+    >
       <SearchBar
         value={searchBarValue}
         onChange={handleSearchBarChange}
