@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const APIKey = require("./config.json").APIKey;
-
+const API_URL = process.env.REACT_APP_WEATHER_API_URL;
+const API_KEY = process.env.REACT_APP_KEY;
 //从后端获取当天天气的数据
 export async function getCurrentWeatherFromAPI(searchValue) {
-  const currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&APPID=${APIKey}&units=metric`;
+  const currentWeatherURL = `${API_URL}weather?q=${searchValue}&APPID=${API_KEY}&units=metric`;
   return new Promise((resolve) => {
     axios
       .get(currentWeatherURL)
@@ -38,7 +38,7 @@ export async function getCurrentWeatherFromAPI(searchValue) {
 
 //从后端获取天气预报的数据
 export async function getForecastWeatherFromAPI(searchValue) {
-  const forecastWeatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&APPID=${APIKey}&units=metric`;
+  const forecastWeatherURL = `${API_URL}forecast?q=${searchValue}&APPID=${API_KEY}&units=metric`;
   return new Promise((resolve) => {
     axios
       .get(forecastWeatherURL)
@@ -58,8 +58,5 @@ export async function getForecastWeatherFromAPI(searchValue) {
         });
         resolve(forecastWeatherArray);
       })
-      .catch(() => {
-        alert("can't find Weather forecast");
-      });
   });
 }

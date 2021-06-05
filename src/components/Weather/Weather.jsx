@@ -1,30 +1,17 @@
+import {useState} from "react";
 import SearchBar from "./components/SearchBar";
 import Current from "./components/Current";
-import styled from "styled-components";
-import Cloudy from "../../assets/Cloudy.jpg";
-import Clear from "../../assets/Clear.jpg";
-import Clouds from "../../assets/Clouds.jpg";
-import Rain from "../../assets/Rain.jpg";
-import { useState } from "react";
+import Cloudy from "../../assets/images/Cloudy.jpg";
+import Clear from "../../assets/images/Clear.jpg";
+import Clouds from "../../assets/images/Clouds.jpg";
+import Rain from "../../assets/images/Rain.jpg";
 import {
   getCurrentWeatherFromAPI,
   getForecastWeatherFromAPI,
 } from "../../services/openWeatherAPI";
 import Forecast from "./components/Forecast";
+import {Container} from "./styles";
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-`;
-
-//主页背景图片
-const Background = styled.div`
-  background: url(${(props) => props.img}) center;
-  height: 1024px;
-  background-size: cover;
-`;
 // 主页组件
 const Weather = () => {
   //搜索栏数值
@@ -62,17 +49,12 @@ const Weather = () => {
       Rain,
       Cloudy,
     };
-    return currentWeather &&
-      currentWeather.weather &&
-      background[currentWeather.weather]
-      ? background[currentWeather.weather]
-      : background["Cloudy"];
+    return (currentWeather && background[currentWeather.weather]) || background["Cloudy"];
   };
 
   //短路计算，当当前天气和天气预报的state不为undefined，显示当前天气和天气预报
   return (
-    <Background img={handleBackground}>
-      <Container>
+    <Container img={handleBackground}>
         <SearchBar
           value={searchBarValue}
           onChange={handleSearchBarChange}
@@ -85,8 +67,7 @@ const Weather = () => {
         {currentWeather && forecastWeather && (
           <Forecast forecastWeather={forecastWeather} />
         )}
-      </Container>
-    </Background>
+    </Container>
   );
 };
 export default Weather;

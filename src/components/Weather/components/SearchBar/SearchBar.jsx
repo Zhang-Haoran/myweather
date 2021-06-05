@@ -1,12 +1,9 @@
 import { SearchOutlined } from "@ant-design/icons";
-import Container from "./components/Container";
-import Input from "./components/Input";
-import Icon from "./components/Icon";
-
+import {Form,Icon,Input} from "./styles";
 // 参数从父组件传入
 const SearchBar = ({ value, onChange, submit, isResultFetched }) => {
   return (
-    <Container isResultFetched={isResultFetched} onSubmit={submit}>
+    <Form isResultFetched={isResultFetched} onSubmit={submit}>
       <Icon>
         <SearchOutlined />
       </Icon>
@@ -16,7 +13,7 @@ const SearchBar = ({ value, onChange, submit, isResultFetched }) => {
         value={value}
         onChange={onChange}
       />
-    </Container>
+    </Form>
   );
 };
 export default SearchBar;
