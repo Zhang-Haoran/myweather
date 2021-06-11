@@ -30,14 +30,14 @@ const Weather = () => {
     //阻止页面跳转
     event.preventDefault();
     //从后端获取天气数据，异步
-    getCurrentWeatherFromAPI(searchBarValue).then((result) => {
+    getCurrentWeatherFromAPI(searchBarValue).then((weatherObject) => {
       //改变当天天气的state
-      setCurrentWeather(result);
+      setCurrentWeather(weatherObject);
     });
     //从后端获取天气预报，异步
-    getForecastWeatherFromAPI(searchBarValue).then((result) => {
+    getForecastWeatherFromAPI(searchBarValue).then((weatherObject) => {
       //改变天气预报的state
-      setForecastWeather(result);
+      setForecastWeather(weatherObject);
     });
   };
 
